@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Neuton:wght@400;700&family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Rubik:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@font-face {
+  font-family: "Futura LT";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Futura_LT-Regular.woff2") format("woff2");
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+:root {
+  --app-background: #688E7F;
+  --app-font: "Jost", sans-serif;
+  --app-reading-leading: 1.68;
+}
+
+@theme inline {
+  --font-sans: var(--app-font);
+  --font-display: var(--app-font);
+  --font-body: var(--app-font);
+  --font-mono: var(--app-font);
+
+  --color-background: #FAF7F2;
+  --color-foreground: #173F3F;
+  --color-card: #FDFBF7;
+  --color-secondary: #F2EEE8;
+  --color-primary: #1FDE9D;
+  --color-primary-foreground: #113B38;
+  --color-brand: #8585FF;
+  --color-brand-strong: #625EF2;
+  --color-brand-soft: #EEECFF;
+  --color-green-soft: #CFF6E7;
+  --color-teal: #096E69;
+  --color-muted: #EDE9E3;
+  --color-muted-foreground: #66716D;
+  --color-border: #DDD8D0;
+  --radius: 1rem;
+}
+
+body {
+  font-family: var(--app-font);
+  background-color: var(--app-background);
+  color: white;
+  letter-spacing: 0.01em;
+  line-height: var(--app-reading-leading);
+}
+
+#root {
+  background: var(--app-background);
+}
+
+* {
+  scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.6; }
+  70% { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes voice-wave-edge {
+  0%, 100% { transform: scaleY(0.82); }
+  50% { transform: scaleY(1.12); }
+}
+
+@keyframes voice-wave-inner {
+  0%, 100% { transform: scaleY(0.68); }
+  50% { transform: scaleY(1.32); }
+}
+
+@keyframes voice-wave-center {
+  0%, 100% { transform: scaleY(0.58); }
+  50% { transform: scaleY(1.55); }
+}
+
+@keyframes voice-cursor {
+  50% { opacity: 0; }
+}
+
+.voice-type-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: #1FDE9D;
+  animation: voice-cursor 650ms steps(1, end) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .voice-type-cursor {
+    animation: none;
+  }
+}
+
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid #1FDE9D;
+  animation: pulse-ring 1.8s ease-out infinite;
+}
+
+.pulse-ring::after {
+  content: '';
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  border: 2px solid #1FDE9D;
+  animation: pulse-ring 1.8s ease-out infinite 0.4s;
+}
+
+.float-anim {
+  animation: float 4s ease-in-out infinite;
+}

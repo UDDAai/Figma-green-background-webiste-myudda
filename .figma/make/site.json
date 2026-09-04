@@ -1,0 +1,10 @@
+{
+  "description": "Empower your personal growth with AI-driven voice coaching featuring goal tracking, progress management, and tailored real-world counselor recommendations.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
